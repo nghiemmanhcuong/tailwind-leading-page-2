@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button {
+    background-color: #ff5300;
+    padding: 15px 40px;
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 18px;
+    display: inline-block;
+    min-width: 167px;
+    line-height: 21px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .container {
+    max-width: 1350px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+  }
+
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 50px 1fr;
+    grid-template-rows: 148px 100px 82px 148px;
+    grid-template-areas:
+      'col-1 col-2 col-2 col-3'
+      'col-1 col-2 col-2 col-6'
+      'col-1 col-5 col-5 col-6'
+      'col-4 col-5 col-5 col-6';
+  }
+
+  .grid-layout-item-1 {
+    grid-area: col-1;
+  }
+
+  .grid-layout-item-2 {
+    grid-area: col-2;
+  }
+
+  .grid-layout-item-3 {
+    grid-area: col-3;
+  }
+
+  .grid-layout-item-4 {
+    grid-area: col-4;
+  }
+
+  .grid-layout-item-5 {
+    grid-area: col-5;
+  }
+
+  .grid-layout-item-6{
+    grid-area: col-6;
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  body {
+    max-width: 1600px;
+  }
+}
+
+@layer utilities {
+  .menu-item:hover::before {
+    width: 100%;
+  }
+
+  .menu-item.active::before {
+    width: 100%;
+  }
+
+  .menu-item::before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #ff5300;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .background-linear-orange {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f29c72 100%);
+  }
+}
